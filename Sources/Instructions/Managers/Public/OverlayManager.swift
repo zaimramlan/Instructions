@@ -73,7 +73,7 @@ public class OverlayManager {
         }
     }
 
-    /// Used to temporarily enable touch forwarding isnide the cutoutPath.
+    /// Used to temporarily enable touch forwarding inside the cutoutPath.
     public var allowTouchInsideCutoutPath: Bool {
         get {
             return overlayView.allowTouchInsideCutoutPath
@@ -81,6 +81,17 @@ public class OverlayManager {
 
         set {
             overlayView.allowTouchInsideCutoutPath = newValue
+        }
+    }
+
+    /// Used to temporarily enable touch forwarding outside the cutoutPath.
+    public var allowTouchOutsideCutoutPath: Bool {
+        get {
+            return overlayView.allowTouchOutsideCutoutPath
+        }
+
+        set {
+            overlayView.allowTouchOutsideCutoutPath = newValue
         }
     }
 

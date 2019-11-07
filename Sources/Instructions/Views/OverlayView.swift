@@ -32,8 +32,11 @@ class OverlayView: UIView {
     let holder: UIView
     let ornaments: UIView
 
-    /// Used to temporarily enable touch forwarding isnide the cutoutPath.
+    /// Used to temporarily enable touch forwarding inside the cutoutPath.
     public var allowTouchInsideCutoutPath: Bool = false
+
+    /// Used to temporarily enable touch forwarding outside the cutoutPath.
+    public var allowTouchOutsideCutoutPath: Bool = false
 
     // MARK: - Initialization
     init() {
@@ -71,13 +74,17 @@ class OverlayView: UIView {
                 return hitView
             }
 
-            if !self.allowTouchInsideCutoutPath {
+            if !self.allowTouchInsideCutoutPath && !self.allowTouchOutsideCutoutPath {
                 return hitView
             }
 
-            if cutoutPath.contains(point) {
+            if cutoutPath.contains(point) && self.allowTouchInsideCutoutPath {
                 return nil
-            } else {
+            }
+            else if self.allowTouchOutsideCutoutPath {
+                return nil
+            }
+            else {
                 return hitView
             }
         }
