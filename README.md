@@ -69,7 +69,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '10.0'
 use_frameworks!
 
-pod 'Instructions', '~> 1.2.0'
+pod 'Instructions', :git => 'https://github.com/zaimramlan/Instructions'
 ```
 
 Then, run the following command:
@@ -323,13 +323,13 @@ func coachMarksController(_ coachMarksController: CoachMarksController, willShow
 
 Second, when a coach mark disappears.
 
-```swift    
+```swift
 func coachMarksController(_ coachMarksController: CoachMarksController, willHide coachMark: CoachMark, at index: Int)
 ```
 
 Third, when all coach marks have been displayed. `didEndShowingBySkipping` specify whether the flow completed because the user requested it to end.
 
-```swift    
+```swift
 func coachMarksController(_ coachMarksController: CoachMarksController, didEndShowingBySkipping skipped: Bool)
 ```
 
@@ -337,7 +337,7 @@ func coachMarksController(_ coachMarksController: CoachMarksController, didEndSh
 
 Whenever the user will tap the overlay, you will get notified through:
 
-```swift    
+```swift
 func shouldHandleOverlayTap(in coachMarksController: CoachMarksController, at index: Int) -> Bool
 ```
 
