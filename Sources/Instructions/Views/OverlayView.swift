@@ -27,6 +27,8 @@ import UIKit
 class OverlayView: UIView {
     internal static let sublayerName = "Instructions.OverlaySublayer"
 
+    /// Delegate to which tell that the overlay view received touch events.
+    var overlayDelegate: OverlayManagerDelegate?
     var cutoutPath: UIBezierPath?
 
     let holder: UIView
@@ -82,6 +84,7 @@ class OverlayView: UIView {
                 return nil
             }
             else if self.allowTouchOutsideCutoutPath {
+                self.overlayDelegate?.didReceiveTouch()
                 return nil
             }
             else {
