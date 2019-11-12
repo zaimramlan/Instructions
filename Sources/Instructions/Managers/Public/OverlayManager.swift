@@ -73,7 +73,7 @@ public class OverlayManager {
         }
     }
 
-    /// Used to temporarily enable touch forwarding isnide the cutoutPath.
+    /// Used to temporarily enable touch forwarding inside the cutoutPath.
     public var allowTouchInsideCutoutPath: Bool {
         get {
             return overlayView.allowTouchInsideCutoutPath
@@ -81,6 +81,23 @@ public class OverlayManager {
 
         set {
             overlayView.allowTouchInsideCutoutPath = newValue
+        }
+    }
+
+    /// Used to temporarily enable touch forwarding outside the cutoutPath.
+    public var allowTouchOutsideCutoutPath: Bool {
+        get {
+            return overlayView.allowTouchOutsideCutoutPath
+        }
+
+        set {
+            overlayView.allowTouchOutsideCutoutPath = newValue
+
+            if newValue == true {
+                overlayView.overlayDelegate = self.overlayDelegate
+            } else {
+                overlayView.overlayDelegate = nil
+            }
         }
     }
 
@@ -244,4 +261,7 @@ public class OverlayManager {
 internal protocol OverlayManagerDelegate: Snapshottable {
     /// Called when the overlay received a tap event.
     func didReceivedSingleTap()
+    /// Called when the overlay received any kind of touch gestures and
+    /// `allowTouchOutsideCutoutPath` is set to `true`.
+    func didReceiveTouch()
 }

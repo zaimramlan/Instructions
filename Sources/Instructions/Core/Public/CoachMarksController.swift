@@ -191,6 +191,10 @@ extension CoachMarksController: OverlayManagerDelegate {
             flow.showNextCoachMark()
         }
     }
+
+    func didReceiveTouch() {
+        flow.stopFlow(immediately: true, userDidSkip: false, shouldCallDelegate: false)
+    }
 }
 
 // MARK: - Private builders

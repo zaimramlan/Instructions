@@ -105,6 +105,7 @@ class CoachMarkDisplayManager {
 
         overlay.enableTap = !coachMark.disableOverlayTap
         overlay.allowTouchInsideCutoutPath = coachMark.allowTouchInsideCutoutPath
+        overlay.allowTouchOutsideCutoutPath = coachMark.allowTouchOutsideCutoutPath
 
         // The view shall be invisible, 'cause we'll animate its entry.
         coachMarkView.alpha = 0.0

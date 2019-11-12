@@ -65,6 +65,9 @@ public struct CoachMark {
     /// Set this property to `true` to allow touch forwarding inside the cutoutPath.
     public var allowTouchInsideCutoutPath: Bool = false
 
+    /// Set this property to `true` to allow touch forwarding outside the cutoutPath.
+    public var allowTouchOutsideCutoutPath: Bool = false
+
     // MARK: - Initialization
     /// Allocate and initialize a Coach mark with default values.
     public init () {
@@ -134,5 +137,6 @@ public func == (lhs: CoachMark, rhs: CoachMark) -> Bool {
            lhs.maxWidth == rhs.maxWidth &&
            lhs.horizontalMargin == rhs.horizontalMargin &&
            lhs.disableOverlayTap == rhs.disableOverlayTap &&
-           lhs.allowTouchInsideCutoutPath == rhs.allowTouchInsideCutoutPath
+           lhs.allowTouchInsideCutoutPath == rhs.allowTouchInsideCutoutPath &&
+           lhs.allowTouchOutsideCutoutPath == rhs.allowTouchOutsideCutoutPath
 }

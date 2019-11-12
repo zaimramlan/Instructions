@@ -2,6 +2,12 @@
 Important changes to Instructions will be documented in this file.
 Instructions follows [Semantic Versioning](http://semver.org/).
 
+## [1.3.3](https://github.com/zaimramlan/Instructions/releases/tag/1.3.3)
+Released on 2019-11-07.
+
+### Fixed
+- Fixed support for overlay passthrough.
+
 ## [1.3.2](https://github.com/zaimramlan/Instructions/releases/tag/1.3.2)
 Released on 2019-11-07.
 
