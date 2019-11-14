@@ -193,7 +193,7 @@ extension CoachMarksController: OverlayManagerDelegate {
     }
 
     func didReceiveTouch() {
-        flow.stopFlow(immediately: true, userDidSkip: false, shouldCallDelegate: false)
+        flow.stopFlow()
     }
 }
 
