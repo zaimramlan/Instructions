@@ -2,8 +2,14 @@
 Important changes to Instructions will be documented in this file.
 Instructions follows [Semantic Versioning](http://semver.org/).
 
+## [1.3.4](https://github.com/zaimramlan/Instructions/releases/tag/1.3.4)
+Released on 2019-11-14.
+
+### Fixed
+- Fixed support for overlay passthrough on iOS 13.
+
 ## [1.3.3](https://github.com/zaimramlan/Instructions/releases/tag/1.3.3)
-Released on 2019-11-07.
+Released on 2019-11-13.
 
 ### Fixed
 - Fixed support for overlay passthrough.
